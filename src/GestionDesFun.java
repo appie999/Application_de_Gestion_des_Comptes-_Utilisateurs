@@ -29,6 +29,7 @@ public class GestionDesFun {
                             System.out.println(UsersArray.get(i));
                             System.out.println("--------------------------------");
                           }
+                        System.out.println("there is no Users ");
                     }
                 void modifyUser() {
 
@@ -71,6 +72,19 @@ public class GestionDesFun {
                             }
                         }
                     }
+
+    void deleteUser(){
+        System.out.print("enter the ID of the user you want to delete :");
+        int id_Delete = sc.nextInt();
+
+        for (int i = 0; i <= UsersArray.size(); i++) {
+            User user = UsersArray.get(i);
+            if (user.getId() == id_Delete){
+                UsersArray.remove(i);
+                System.out.println("User has been successfully deleted. ");
+            }
+        }
+    }
 
 
 }

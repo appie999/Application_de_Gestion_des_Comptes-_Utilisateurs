@@ -29,7 +29,7 @@ public class Main {
                 break;
 
             case "2":
-
+                    gestionDesFun.searchUser();
                 break;
 
             case "3":
