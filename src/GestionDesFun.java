@@ -35,11 +35,11 @@ public class GestionDesFun {
 
                         System.out.print("enter the ID of the user you want to modify: ");
                         int id_modify = sc.nextInt();
-                        for (int i = 0; i <= UsersArray.size(); i++) {
+                        for (int i = 0; i < UsersArray.size(); i++) {
                             User user = UsersArray.get(i);
                             if (user.getId() == id_modify) {
-                                System.out.print(" user found ");
-                                System.out.print(" what do you want to modify !");
+                                System.out.print("user found ");
+                                System.out.print(" what do you want to modify:");
                                 System.out.print("\n1. name: \n2. Age: \n3. Role: \n");
                                 System.out.print("choose option: ");
                                 int choice = sc.nextInt();
@@ -65,10 +65,10 @@ public class GestionDesFun {
                                         user.setRole(role);
                                         break;
                                     default:
-                                        System.out.println("not found");
+                                        System.out.println("not found ");
 
                                 }
-                                System.out.println("done !");
+                                System.out.println("Modified successfully ✅");
                             }
                         }
                     }
@@ -77,14 +77,24 @@ public class GestionDesFun {
         System.out.print("enter the ID of the user you want to delete :");
         int id_Delete = sc.nextInt();
 
-        for (int i = 0; i <= UsersArray.size(); i++) {
+        for (int i = 0; i < UsersArray.size(); i++) {
             User user = UsersArray.get(i);
             if (user.getId() == id_Delete){
                 UsersArray.remove(i);
-                System.out.println("User has been successfully deleted. ");
+                System.out.println("User has been successfully deleted ✅");
             }
         }
     }
 
+    void searchUser(){
+        System.out.print("enter the ID of user you want to search :");
+        int id_search = sc.nextInt();
+        for(int i=0;i<UsersArray.size();i++){
+            User user = UsersArray.get(i);
+            if (id_search == user.getId()){
+                System.out.println(UsersArray.get(i));
+            }
+        }
 
+    }
 }
